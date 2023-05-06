@@ -117,22 +117,16 @@ def shift_by_letter(letter, letter_shift):
     '''
     # Replace `pass` with your code. 
     # Stay within the function. Only use the parameters as input. The function should return your answer.
-def shift_by_letter(letter, letter_shift):
-    letters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+def shift_letter(letter, shift):
     
-    letters_values = [*range(0,27)]
+    if letter == ' ' and letter_shift == '_':
+        return ' '
     
-    dictionary = dict(zip(letters,letters_values))
-    shift = dictionary.get(letter_shift)
-    print(shift)
-    
-    if letter == ' ' and letter_shift =='_':
-        
     result = ord(letter) + shift
     while result > ord('Z'):
         result -= 26
     while result < ord('A'):
-        result += 26
+        result += 26 
     return chr(result)
     
     
